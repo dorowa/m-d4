@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h3>{{ title }}.</h3>
+    <h5>Полный список библиотеки:</h5>
+    <hr>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }}, год издания: {{ book.year_release }}</li>
+        {% endfor %}
+    </ul>
+    <h6>Всего {{ books|length }} книг.</h6>
+{% endblock %}

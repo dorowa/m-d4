@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="p_library.author" pk="1">
+    <field name="full_name" type="TextField">Саммерфилд Марк</field>
+    <field name="birth_year" type="SmallIntegerField">1980</field>
+    <field name="country" type="CharField">US</field>
+  </object>
+  <object model="p_library.author" pk="2">
+    <field name="full_name" type="TextField">Форта Бент</field>
+    <field name="birth_year" type="SmallIntegerField">1985</field>
+    <field name="country" type="CharField">US</field>
+  </object>
+  <object model="p_library.author" pk="3">
+    <field name="full_name" type="TextField">Дакет Джон</field>
+    <field name="birth_year" type="SmallIntegerField">1989</field>
+    <field name="country" type="CharField">US</field>
+  </object>
+  <object model="p_library.author" pk="4">
+    <field name="full_name" type="TextField">Antonio Mele</field>
+    <field name="birth_year" type="SmallIntegerField">1991</field>
+    <field name="country" type="CharField">IN</field>
+  </object>
+  <object model="p_library.publisher" pk="1">
+    <field name="name" type="TextField">Символ-Плюс</field>
+    <field name="description" type="TextField">г. СПб</field>
+    <field name="found_date" type="SmallIntegerField">2000</field>
+    <field name="property_type" type="TextField">private</field>
+    <field name="rating" type="SmallIntegerField">1</field>
+  </object>
+  <object model="p_library.publisher" pk="2">
+    <field name="name" type="TextField">Издательский дом Вильямс</field>
+    <field name="description" type="TextField">г. Москва</field>
+    <field name="found_date" type="SmallIntegerField">1992</field>
+    <field name="property_type" type="TextField">private</field>
+    <field name="rating" type="SmallIntegerField">6</field>
+  </object>
+  <object model="p_library.publisher" pk="3">
+    <field name="name" type="TextField">Packt Publishing</field>
+    <field name="description" type="TextField">Mumbai, India</field>
+    <field name="found_date" type="SmallIntegerField">2020</field>
+    <field name="property_type" type="TextField">private</field>
+    <field name="rating" type="SmallIntegerField">-2</field>
+  </object>
+  <object model="p_library.publisher" pk="4">
+    <field name="name" type="TextField">ООО Эксмо</field>
+    <field name="description" type="TextField">Москва</field>
+    <field name="found_date" type="SmallIntegerField">2001</field>
+    <field name="property_type" type="TextField">private</field>
+    <field name="rating" type="SmallIntegerField">-2</field>
+  </object>
+  <object model="p_library.book" pk="1">
+    <field name="ISBN" type="CharField">978-5-93286-161-5</field>
+    <field name="title" type="TextField">Программирование на Python 3. Подробное руководство.</field>
+    <field name="description" type="TextField">Третья версия языка Python сделала его еще более мощным, удобным, логич􏰀 ным и выразительным.</field>
+    <field name="year_release" type="SmallIntegerField">2009</field>
+    <field name="copy_count" type="SmallIntegerField">5</field>
+    <field name="price" type="DecimalField">1600.00</field>
+    <field name="author" rel="ManyToOneRel" to="p_library.author">1</field>
+    <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">2</field>
+  </object>
+  <object model="p_library.book" pk="2">
+    <field name="ISBN" type="CharField">5-8459-0827-2</field>
+    <field name="title" type="TextField">Освой самостоятельно SQL. 10 минут на урок, 3-е издание</field>
+    <field name="description" type="TextField">Данная книга поможет вам в кратчайшие сроки освоить SQL — самый популярный язык баз данных.</field>
+    <field name="year_release" type="SmallIntegerField">2006</field>
+    <field name="copy_count" type="SmallIntegerField">3</field>
+    <field name="price" type="DecimalField">1200.00</field>
+    <field name="author" rel="ManyToOneRel" to="p_library.author">2</field>
+    <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+  </object>
+  <object model="p_library.book" pk="3">
+    <field name="ISBN" type="CharField">978-1-83898-195-2</field>
+    <field name="title" type="TextField">Django 3 by Example</field>
+    <field name="description" type="TextField">Build powerful and reliable Python web applications from scratch.</field>
+    <field name="year_release" type="SmallIntegerField">2020</field>
+    <field name="copy_count" type="SmallIntegerField">3</field>
+    <field name="price" type="DecimalField">2000.00</field>
+    <field name="author" rel="ManyToOneRel" to="p_library.author">3</field>
+    <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+  </object>
+  <object model="p_library.book" pk="4">
+    <field name="ISBN" type="CharField">978-5-699-64193-2</field>
+    <field name="title" type="TextField">HTML и CSS. Разработка и дизайн веб-сайтов</field>
+    <field name="description" type="TextField">Эта книга - самый простой и интересный способ изучить HTML и CSS.</field>
+    <field name="year_release" type="SmallIntegerField">2013</field>
+    <field name="copy_count" type="SmallIntegerField">1</field>
+    <field name="price" type="DecimalField">5000.00</field>
+    <field name="author" rel="ManyToOneRel" to="p_library.author">4</field>
+    <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">4</field>
+  </object>
+  <object model="p_library.book" pk="4">
+    <field name="ISBN" type="CharField">978-5-699-64193-2</field>
+    <field name="title" type="TextField">JavaScript и jQuery. Интерактивная веб-разработка</field>
+    <field name="description" type="TextField">Эта книга - самый простой и интересный способ изучить JavaScript и jQuery.</field>
+    <field name="year_release" type="SmallIntegerField">2017</field>
+    <field name="copy_count" type="SmallIntegerField">1</field>
+    <field name="price" type="DecimalField">5000.00</field>
+    <field name="author" rel="ManyToOneRel" to="p_library.author">4</field>
+    <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">4</field>
+  </object>
+</django-objects>
