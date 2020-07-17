@@ -3,11 +3,11 @@
     <!-- <h3> {{ title }}. </h3> -->
     <h4>Список {{ publishers|length }} издательств моей личной коллекции.</h4>
     <hr>
-    <ul>
-        {% for publisher in publishers %}
-        <li>
+    {% for publisher in publishers %}
+        <ul class="list-group flex-fill">
+        <li class="list-group-item">
             {% if publisher.rating >= 5 %}
-                <p class="m-0" style="color: green">
+                <p class="m-0" style="color: green; width:100%;">
             {% elif publisher.rating <= -5 %}
                 <p class="m-0" style="color: red">
             {% else %}
@@ -27,7 +27,13 @@
                     <input class="btn btn-danger rounded-circle" type="submit" value="&#128078;" />
                 </form>
             </span>
+            <ul class="list-group">
+                {% for book in publisher.books.all %}
+                    <li class="list-group-item">{{ book.author.full_name }}, {{ book.title }}</li>
+                {% endfor %}
+            </ul>
         </li>
-        {% endfor %}
-    </ul>
+        </ul>
+    {% endfor %}
+    
 {% endblock %}
